@@ -24,17 +24,17 @@ from cinema.serializers import (
 )
 
 
-class CinemaHallSet(viewsets.ModelViewSet):
+class CinemaHallViewSet(viewsets.ModelViewSet):
     queryset = CinemaHall.objects.all()
     serializer_class = CinemaHallSerializer
 
 
-class GenreSet(viewsets.ModelViewSet):
+class GenreViewSet(viewsets.ModelViewSet):
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
 
 
-class ActorSet(viewsets.ModelViewSet):
+class ActorViewSet(viewsets.ModelViewSet):
     queryset = Actor.objects.all()
     serializer_class = ActorSerializer
 
@@ -44,7 +44,7 @@ class ActorSet(viewsets.ModelViewSet):
         return ActorSerializer
 
 
-class MovieSet(viewsets.ModelViewSet):
+class MovieViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         queryset = Movie.objects.all()
@@ -60,7 +60,7 @@ class MovieSet(viewsets.ModelViewSet):
         return MovieSerializer
 
 
-class MovieSessionSet(viewsets.ModelViewSet):
+class MovieSessionViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = MovieSession.objects.all()
         if self.action in ["list", "retrieve"]:
@@ -75,11 +75,11 @@ class MovieSessionSet(viewsets.ModelViewSet):
         return MovieSessionSerializer
 
 
-class OrderSet(viewsets.ModelViewSet):
+class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
 
-class TicketSet(viewsets.ModelViewSet):
+class TicketViewSet(viewsets.ModelViewSet):
     queryset = Ticket.objects.all()
     serializer_class = TicketSerializer
